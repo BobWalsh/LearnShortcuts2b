@@ -34,7 +34,9 @@ gem 'devise', '~> 4.2'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'mandrill-api', '~> 1.0', '>= 1.0.53'
 gem 'mandrill_mailer', '~> 1.4'
-
+gem 'seed_dump', '~> 3.3', '>= 3.3.1'
+gem 'stripe', '~> 3.30'
+gem 'stripe_event', '~> 2.1', '>= 2.1.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

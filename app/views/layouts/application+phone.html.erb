@@ -9,6 +9,7 @@
     <title>Learnshortcuts</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -33,14 +34,7 @@
     </script>
   </head>
 
-  <body class="site">
-    <section class="hero ls-main-hero">
-    <%= render  "layouts/navigation" %>
-    <main class= "site-content">
+  <body>
     <%= yield %>
-    </main>
-    </section>
-    <!-- /Hero and nav -->
-    <%= render  "layouts/footer" %>
   </body>
 </html>
