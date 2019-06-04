@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="columns">  
+  <div class='column mt-60'>
+
+    <h1 class="title is-text-white">Cheatsheets</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Ostype</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cheatsheets.each do |cheatsheet| %>
+          <tr>
+            <td><%= cheatsheet.display_name %></td>
+            <td><%= cheatsheet.description %></td>
+            <td><%= cheatsheet.ostype %></td>
+            <td><%= link_to 'Show', cheatsheet %></td>
+            <td><%= link_to 'Edit', edit_cheatsheet_path(cheatsheet) %></td>
+            <td><%= link_to 'Destroy', cheatsheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Cheatsheet', new_cheatsheet_path %>
+  </div>
+</div>

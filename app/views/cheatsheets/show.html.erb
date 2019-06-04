@@ -1,0 +1,24 @@
+<div class='container'>
+  <div class='columns'>
+    <div class='column'><p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cheatsheet.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cheatsheet.description %>
+</p>
+
+<p>
+  <strong>Ostype:</strong>
+  <%= @cheatsheet.ostype %>
+</p>
+
+<%= link_to 'Edit', edit_cheatsheet_path(@cheatsheet) %> |
+<%= link_to 'Back', cheatsheets_path %>
+    </div>
+  </div>
+</div>
