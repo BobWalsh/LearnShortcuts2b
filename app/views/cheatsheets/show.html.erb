@@ -1,5 +1,5 @@
 <section class="section ls-features-cards">
-  <div class='hero-body container'>
+  <div class='vmargin-dss hero-body container' data-page="<%= controller.controller_name %>">
     <div class='columns'>
       <div class='flexcheat column is-12 has-text-white'>
         <div class="flexcheat-heading">
@@ -31,15 +31,25 @@
         <% @cards.each do |card| %>
         <div class="card-pane">
           <div><%= card.question %></div>
-          <div><%= card.answer %></div>
-          <div><%= card.citation_title %></div>
-          <div><%= card.citation_url %></div>
-
+          <% if card.interface == 1 %>
+          <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
+            <div class="testscale">
+              <div class='interface-1'>
+                <%= card.keycaps %>
+              </div>
+            </div>
+          </div>
+          <% elsif card.interface == 2 %>
+          <% elsif card.interface == 3 %>
+          <% end  %>
         </div>
-        <% end %>
 
+
+
+        <% end %>
       </div>
     </div>
+  </div>
   </div>
   </div>
 </section>

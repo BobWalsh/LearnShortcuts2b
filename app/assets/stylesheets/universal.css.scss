@@ -1698,10 +1698,18 @@ code,
 }
 
 // v2 flex cheatsheet and cards
+.interface-1 {
+  font-family: "Varela Round",
+    sans-serif;
+  zoom: 0.75;
+}
+
 .flexcheat {
   outline: 2px solid gray;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
   background-color: DodgerBlue;
 }
 

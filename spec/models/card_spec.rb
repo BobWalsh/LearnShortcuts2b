@@ -19,6 +19,8 @@
 #  os                      :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
+#  interface               :integer
+#  description             :string
 #
 
 require 'rails_helper'
