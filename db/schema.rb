@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_230359) do
+ActiveRecord::Schema.define(version: 2019_06_05_174057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.string "citation_title"
+    t.string "citation_url"
+    t.string "keycaps"
+    t.integer "cheatsheet_id"
+    t.integer "answer_type"
+    t.text "answer_data"
+    t.string "cheatsheet_display_name"
+    t.boolean "is_sample"
+    t.string "notes"
+    t.string "mnemonic"
+    t.string "gif_url"
+    t.string "os"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cheatsheets", force: :cascade do |t|
     t.string "display_name"
