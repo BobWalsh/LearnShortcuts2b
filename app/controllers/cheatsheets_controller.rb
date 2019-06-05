@@ -10,6 +10,7 @@ class CheatsheetsController < ApplicationController
   # GET /cheatsheets/1
   # GET /cheatsheets/1.json
   def show
+    @cards = Card.where(cheatsheet_id: @cheatsheet.id)
   end
 
   # GET /cheatsheets/new

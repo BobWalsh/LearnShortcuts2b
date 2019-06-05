@@ -1,24 +1,45 @@
-<div class='container'>
-  <div class='columns'>
-    <div class='column'><p id="notice"><%= notice %></p>
+<section class="section ls-features-cards">
+  <div class='hero-body container'>
+    <div class='columns'>
+      <div class='flexcheat column is-12 has-text-white'>
+        <div class="flexcheat-heading">
+          <p>
+            <strong>Name:</strong>
+            <%= @cheatsheet.display_name %>
+          </p>
+        </div>
+        <div class="flexcheat-heading">
+          <p>
+            <strong>Description:</strong>
+            <%= @cheatsheet.description %>
+          </p>
+        </div>
+        <div class="flexcheat-heading">
+          <p>
+            <strong>OS:</strong>
+            <%= @cheatsheet.os %>
+          </p>
+        </div>
+        <div class="flexcheat-heading">
+          <%= link_to 'Edit', edit_cheatsheet_path(@cheatsheet) %> |
+          <%= link_to 'Back', cheatsheets_path %>
+        </div>
+      </div>
+    </div>
+    <div class='column is-12'>
+      <div class="flexcheat">
+        <% @cards.each do |card| %>
+        <div class="card-pane">
+          <div><%= card.question %></div>
+          <div><%= card.answer %></div>
+          <div><%= card.citation_title %></div>
+          <div><%= card.citation_url %></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cheatsheet.name %>
-</p>
+        </div>
+        <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @cheatsheet.description %>
-</p>
-
-<p>
-  <strong>Ostype:</strong>
-  <%= @cheatsheet.ostype %>
-</p>
-
-<%= link_to 'Edit', edit_cheatsheet_path(@cheatsheet) %> |
-<%= link_to 'Back', cheatsheets_path %>
+      </div>
     </div>
   </div>
-</div>
+  </div>
+</section>

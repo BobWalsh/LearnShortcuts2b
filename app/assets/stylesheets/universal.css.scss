@@ -63,6 +63,7 @@
 .top-btns {
   line-height: 32px !important;
 }
+
 .is-left {
   text-align: left;
 }
@@ -82,6 +83,7 @@
   overflow: hidden;
   backface-visibility: hidden;
   transition: box-shadow 0.5s, transform 0.5s;
+
   &:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
@@ -104,6 +106,7 @@
   box-shadow: 0;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
+
   &:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
@@ -126,11 +129,13 @@
   overflow: hidden;
   backface-visibility: hidden;
   transition: transform 0.8s cubic-bezier(0.63, -0.32, 0.4, 1.39);
+
   &:hover {
     // top: -2px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   }
 }
+
 .card-height {
   min-height: 487px;
 }
@@ -139,10 +144,12 @@
   position: absolute;
   bottom: 10px;
 }
+
 .line-numbers {
   color: #f1f1f2;
   font-size: 1.2rem;
 }
+
 // pricing css
 
 .stripe-button-el {
@@ -163,6 +170,7 @@
   font-size: 1.2rem;
   color: #999;
 }
+
 .section .section-title-wrapper .bg-number,
 .section .section-title-wrapper .bg-symbol {
   position: absolute;
@@ -1159,13 +1167,16 @@
 .mr-80 {
   margin-right: 80px !important;
 }
+
 .mr-100 {
   margin-right: 100px !important;
 }
+
 .display-0 {
   opacity: 0.001;
   display: none !important;
 }
+
 .display-1 {
   opacity: 1;
   display: inherit;
@@ -1174,6 +1185,7 @@
 .display-n-0 {
   display: none !important;
 }
+
 .display-n-1 {
   display: block !important;
 }
@@ -1181,9 +1193,11 @@
 .display-faint {
   opacity: 0.2 !important;
 }
+
 .mt-force-10 {
   margin-top: 10px !important;
 }
+
 .mb-force-10 {
   margin-bottom: 10px !important;
 }
@@ -1261,9 +1275,11 @@
   text-align: center;
   padding-top: 1px;
 }
+
 #key_apostrophe em {
   line-height: 40px;
 }
+
 #key_semicolon strong {
   line-height: 29px;
 }
@@ -1299,6 +1315,7 @@
   padding-top: 1px;
   padding-right: 110px;
 }
+
 #key_caps_lock strong {
   font-size: 1rem;
   text-align: left;
@@ -1325,6 +1342,7 @@
   padding-right: 3px;
   font-size: 1rem;
 }
+
 #key_right_bracket {
   font-size: 1.2rem; //rsw
   padding-left: 0;
@@ -1345,6 +1363,7 @@
 #key_left_cmd span {
   padding-left: 18px;
 }
+
 #key_left_cmd em {
   line-height: 11px;
   padding-left: 80px;
@@ -1363,6 +1382,7 @@
   padding-left: 54px;
   font-size: 0.8rem;
 }
+
 #key_right_alt span {
   line-height: 0 !important;
   text-align: right;
@@ -1456,6 +1476,7 @@ i.fa.fa-plus {
   position: relative;
   margin-top: 4rem !important;
 }
+
 .xyzcol2 {
   width: 60%;
 }
@@ -1469,6 +1490,7 @@ code,
 #interface-0 {
   line-height: 36px;
 }
+
 // Review Dialog CSS
 #msg1,
 #msg2,
@@ -1510,6 +1532,7 @@ code,
   margin-left: 1rem !important;
   margin-top: 1rem !important;
 }
+
 .whyitworks p {
   font-size: 1.1rem;
   margin-bottom: 10px;
@@ -1534,10 +1557,12 @@ code,
   border: none;
   border-radius: 50%;
 }
+
 /* Button's icon on hover */
 .custom_style .popupwindow_titlebar_button svg {
   display: none;
 }
+
 .custom_style .popupwindow_titlebar_button:hover svg {
   display: block;
 }
@@ -1546,10 +1571,12 @@ code,
 .custom_style .popupwindow_titlebar_button_close {
   background-color: #ff544d;
 }
+
 .custom_style .popupwindow_titlebar_button_close:hover {
   background-color: #ff544d;
   stroke: #803020;
 }
+
 .custom_style .popupwindow_titlebar_button_close:active {
   background-color: #ff544d;
 }
@@ -1558,10 +1585,12 @@ code,
 .custom_style .popupwindow_titlebar_button_maximize {
   background-color: #ffbd2d;
 }
+
 .custom_style .popupwindow_titlebar_button_maximize:hover {
   background-color: #ffbd2d;
   stroke: #885511;
 }
+
 .custom_style .popupwindow_titlebar_button_maximize:active {
   background-color: #ffbd2d;
 }
@@ -1570,36 +1599,44 @@ code,
 .custom_style .popupwindow_titlebar_button_minimize {
   background-color: #28ca41;
 }
+
 .custom_style .popupwindow_titlebar_button_minimize:hover {
   background-color: #28ca41;
   stroke: #223311;
 }
+
 .custom_style .popupwindow_titlebar_button_minimize:active {
   background-color: #28ca41;
 }
+
 // items in popup window
 .popup-card-item {
   text-align: left;
   word-wrap: break-word;
   color: black;
 }
+
 .popup-card-item-set {
   text-align: left;
   word-wrap: break-word;
   color: white;
   background-color: blue;
 }
+
 .popup-card-item-set {
   text-align: left;
   word-wrap: break-word;
   color: white;
 }
+
 .popup-know-well {
   background-color: #00b289;
 }
+
 .popup-know-some {
   background-color: darkgoldenrod;
 }
+
 .popup-dont-know {
   background-color: #ff544d;
 }
@@ -1615,11 +1652,13 @@ code,
   box-shadow: 0;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
+
   &:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
   }
 }
+
 #popup_question .subtitle a {
   font-size: 1rem;
   height: 100%;
@@ -1630,12 +1669,15 @@ code,
   overflow-y: scroll !important;
   height: 95% !important;
 }
+
 .not-visible {
   visibility: hidden;
 }
+
 .is-visible {
   visibility: visible;
 }
+
 .question-selected {
   background-color: #eda514;
 }
@@ -1653,4 +1695,27 @@ code,
 .site-content,
 .answer-btn {
   transition: 0.3s ease;
+}
+
+// v2 flex cheatsheet and cards
+.flexcheat {
+  outline: 2px solid gray;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+.flexcheat>.card-pane {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  max-width: 300px;
+}
+
+.flexcheat>.flexcheat-heading {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
