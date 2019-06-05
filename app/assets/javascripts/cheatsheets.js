@@ -7,6 +7,11 @@ $(document).ready(function () {
     .first()
     .data("page");
 
+  var card = document.querySelector('.card');
+  card.addEventListener('click', function () {
+    card.classList.toggle('is-flipped');
+  });
+
   if (this_page == "cheatsheets") {
     // convert keycaps to actual keys
     $(".interface-1").each(function (i, val) {
