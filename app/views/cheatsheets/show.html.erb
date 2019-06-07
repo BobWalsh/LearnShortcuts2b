@@ -32,13 +32,13 @@
 
         <div class="card">
           <div class="front">
-            <header class="card-header">
-              <p class="card-header-title">
+            <header class="card-header has-background-dark has-text-white-bis">
+              <p class="card-header-title has-text-white-bis">
                 <%= card.question %>
               </p>
             </header>
             <div class="card-content">
-              <div class="content">
+              <div class="content front-content">
                 <% if card.interface == 1 %>
                 <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
                   <div class="testscale">
@@ -52,26 +52,30 @@
                 <% end  %>
               </div>
             </div>
-            <footer class="card-footer">
-              <a href="#" class="card-footer-item">Save</a>
-              <a href="#" class="card-footer-item">Edit</a>
-              <a href="#" class="card-footer-item">Delete</a>
+            <footer class="">
+              <i class="fa fa-info-circle is-pulled-right pr-20 pt-10 pb-20" aria-hidden="true"></i>
             </footer>
           </div>
           <div class="back">
-            <header class="card-header">
-              <p class="card-header-title">
+            <header class="card-header has-background-dark has-text-white-bis">
+              <p class="card-header-title has-text-white-bis">
                 <%= card.question %>
               </p>
             </header>
             <div class="card-content">
-              <div class="content">
+              <div class="content back-content">
+                <% if card.description.length > 10 %>
+                <div class='is-size-6 has-text-grey-dark is-uppercase'>Notes:</div>
                 <div class='notes-area'>
                   <%= card.description %>
                 </div>
+                <% end %>
+                <% if !card.mnemonic.nil? %>
+                <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Mnemonic:</div>
                 <div class='mnemonic-area'>
                   <%= card.mnemonic %>
                 </div>
+                <% end %>
                 <div class='citation-area'>
                   <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
                 </div>
@@ -79,9 +83,8 @@
             </div>
             </footer>
             <footer class="card-footer">
-              <a href="#" class="card-footer-item">Save</a>
-              <a href="#" class="card-footer-item">Edit</a>
-              <a href="#" class="card-footer-item">Delete</a>
+              <a href="#" class="info symbolcard-footer-item">Save</a>
+
             </footer>
           </div>
         </div>

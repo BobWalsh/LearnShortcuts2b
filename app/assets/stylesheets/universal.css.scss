@@ -1729,11 +1729,11 @@ code,
 }
 
 .card {
-  width: 450px;
+  max-width: 350px;
   height: 300px;
   background-color: #fff;
   background: linear-gradient(#f8f8f8, #fff);
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.6);
   border-radius: 6px;
   overflow: hidden;
   // position: relative;
@@ -1741,9 +1741,33 @@ code,
 
 }
 
-.card-content {
-  max-height: 256px;
+.fa-info-circle {
+  color: rgba(0, 0, 0, 0.2);
+  transition-duration: 86ms;
+  transition-property: background-color,
+    opacity,
+    transform;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: #01216E;
+  }
 }
+
+.card-content {
+  // max-height: 256px;
+}
+
+.back-content {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.front-content {
+  height: 123px;
+  overflow-y: scroll;
+}
+
 
 .front {
   padding: 10px;
