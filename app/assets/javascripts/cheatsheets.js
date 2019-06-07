@@ -7,10 +7,7 @@ $(document).ready(function () {
     .first()
     .data("page");
 
-  var card = document.querySelector('.card');
-  card.addEventListener('click', function () {
-    card.classList.toggle('is-flipped');
-  });
+  $(".card").flip({ axis: 'y' });
 
   if (this_page == "cheatsheets") {
     // convert keycaps to actual keys
