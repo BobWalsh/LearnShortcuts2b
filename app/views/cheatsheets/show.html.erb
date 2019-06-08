@@ -1,28 +1,30 @@
 <section class="section ls-features-cards">
   <div class='vmargin-dss hero-body container' data-page="<%= controller.controller_name %>">
     <div class='columns'>
-      <div class='flexcheat column is-12 has-text-white'>
-        <div class="flexcheat-heading">
-          <p>
-            <strong>Name:</strong>
-            <%= @cheatsheet.display_name %>
-          </p>
-        </div>
-        <div class="flexcheat-heading">
-          <p>
-            <strong>Description:</strong>
-            <%= @cheatsheet.description %>
-          </p>
-        </div>
-        <div class="flexcheat-heading">
-          <p>
-            <strong>OS:</strong>
-            <%= @cheatsheet.os %>
-          </p>
-        </div>
-        <div class="flexcheat-heading">
-          <%= link_to 'Edit', edit_cheatsheet_path(@cheatsheet) %> |
-          <%= link_to 'Back', cheatsheets_path %>
+      <div class=' column is-12 has-text-white'>
+        <div class="flexcheat">
+          <div class='image-area'>
+            <figure class="image is-128x128">
+              <img class="" src="<%=asset_path("sets/#{@cheatsheet.image}")%>" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class=''>
+            <div class="has-text-white-bis is-size-3">
+              <%= @cheatsheet.display_name %>
+            </div>
+            <div class="has-text-white-bis is-size-3">
+              <p class="is-size-4">
+                <%= @cheatsheet.description %>
+              </p>
+            </div>
+          </div>
+          <div class=''>
+            <p class="is-size-4"> OS:
+              <strong><%= @cheatsheet.os %></strong></p>
+            <p class="is-size-4"> Level:
+              <strong><%= @cheatsheet.level %></strong></p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -36,8 +38,10 @@
               <p class="card-header-title has-text-white-bis">
                 <%= card.question %>
               </p>
+
             </header>
             <div class="card-content">
+
               <div class="content front-content">
                 <% if card.interface == 1 %>
                 <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
@@ -53,7 +57,12 @@
               </div>
             </div>
             <footer class="">
-              <i class="fa fa-info-circle is-pulled-right pr-20 pt-10 pb-20" aria-hidden="true"></i>
+              <i class="fa fa-info-circle is-pulled-right  pt-10 pr-40 mr-20 pb-0 con-tooltip top" aria-hidden="true">
+                <div class="tooltip ">
+                  <p>Click to show more</p>
+                </div>
+              </i>
+
             </footer>
           </div>
           <div class="back">
@@ -83,7 +92,7 @@
             </div>
             </footer>
             <footer class="card-footer">
-              <a href="#" class="info symbolcard-footer-item">Save</a>
+
 
             </footer>
           </div>
