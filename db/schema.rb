@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_233848) do
+ActiveRecord::Schema.define(version: 2019_06_09_002843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,29 @@ ActiveRecord::Schema.define(version: 2019_06_08_233848) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "card_brand"
+    t.integer "card_expiration_month"
+    t.integer "card_expiration_year"
+    t.string "card_last_4"
+    t.boolean "comp_user"
+    t.string "current_plan_id"
+    t.string "current_plan_interval_count"
+    t.string "current_plan_interval"
+    t.string "current_plan_nickname"
+    t.string "cust_id"
+    t.boolean "gets_no_email", default: false
+    t.boolean "is_an_admin"
+    t.datetime "sent_trial_expiration_email"
+    t.string "session_token"
+    t.string "stripe_card_id"
+    t.string "stripe_customer_id"
+    t.string "stripe_subscription_id"
+    t.datetime "subscribed_thru_date"
+    t.boolean "subscription_ends", default: false
+    t.boolean "subscription_is_active"
+    t.string "subscription_plan_id"
+    t.datetime "subscription_thru_date"
+    t.integer "weekly_email_day"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

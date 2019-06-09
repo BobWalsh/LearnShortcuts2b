@@ -1,22 +1,55 @@
 <div class="hero-head">
   <nav class="navbar container ls-main-nav">
+    <!-- Brand -->
     <div class="navbar-brand">
       <a href="#" class="navbar-item">
-        <img src ="<%= image_path("bulma-style.png") %>" 
+        <img src="<%= image_path("bulma-style.png") %>"
           srcset="<%= image_path("bulma-style@2x.png") %> 320w, <%= image_path("bulma-style@3x.png") %> 400w, <%= image_path("bulma-style@3x.png") %> 1024w"
           title="LandSpeed BulmaStyle" width="195">
       </a>
-      <a role="button" class="navbar-burger has-text-info"
-        data-target="mainNavMenu" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span
-          aria-hidden="true"></span><span aria-hidden="true"></span>
+      <a role="button" class="navbar-burger has-text-info" data-target="mainNavMenu" aria-label="menu"
+        aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
+          aria-hidden="true"></span>
       </a>
     </div>
+    <!-- Navbar menu -->
     <div class="navbar-menu" id="mainNavMenu">
-      <div class="navbar-end has-text-info"><a href="#" class="navbar-item is-size-7 is-active">Home</a><a href="#"
-          class="navbar-item is-size-7">Features</a><a href="#" class="navbar-item is-size-7">Theme</a><a href="#"
-          class="navbar-item is-size-7">Service</a><a href="#" class="navbar-item is-size-7">Pricing</a><a href="#"
-          class="navbar-item is-size-7">Testimonial</a><a href="#" class="navbar-item is-size-7">Contact</a><a
-          href="#" class="navbar-item is-size-7 ls-main-nav--signup">Free Sign Up Now!</a></div>
+      <div class="navbar-end has-text-info">
+        <% if user_signed_in? %>
+        <a class="navbar-item has-text-info is-size-7 is-active" href="/">
+          Review Cards
+        </a>
+        <%= link_to 'Sets', cheatsheets_path(), class:"navbar-item has-text-info" %>
+        <a class="navbar-item has-text-info is-size-7" href="/">
+          Metrics
+        </a>
+        <% else %>
+        <%= link_to 'Why LearnShortcuts', root_path(), class:"navbar-item has-text-info is-active" %>
+        <%= link_to 'Why it Works', "/", class:"navbar-item has-text-info" %>
+        <%= link_to 'Pricing', "/", class:"navbar-item has-text-info" %>
+        <a class="navbar-item " href="/">
+          Blog
+        </a>
+        <%= link_to 'About', "/", class:"navbar-item has-text-info" %>
+        <% end %>
+      </div>
     </div>
+    <div class="navbar-end">
+      <% if user_signed_in? %>
+      <!-- User is signed in -->
+      <% if current_user.must_pay? %>
+      <div id="trial_button" class='navbar-item'>
+        <%= link_to 'Days left in Trial:  ' + current_user.trial_days?.to_s, subscriptions_path(), class:"navbar-item trial-flag button #{@is_purple} " %>
+      </div>
+      <% end %>
+      <div class='navbar-item'>
+        <button id="points-item" class="<%= @class_results %>" tooltip data-tooltip="<%= @points_tooltip_text %>">Points
+          this week:
+          <span id="nav-total-points" class="has-text-weight-bold ml-5">
+            <%= @points_this_week%>
+          </span>
+        </button>
+      </div>
+      <% end %>
   </nav>
 </div>
