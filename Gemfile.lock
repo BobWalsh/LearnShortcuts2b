@@ -68,6 +68,13 @@ GEM
       xpath (~> 3.2)
     chartkick (3.2.0)
     coderay (1.1.2)
+    coffee-rails (4.2.2)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     devise (4.6.2)
@@ -294,6 +301,7 @@ DEPENDENCIES
   byebug
   capybara
   chartkick (~> 3.0, >= 3.0.1)
+  coffee-rails (~> 4.2)
   devise (~> 4.2)
   factory_bot
   faker
