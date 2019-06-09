@@ -21,6 +21,7 @@
 #  updated_at              :datetime         not null
 #  interface               :integer
 #  description             :string
+#  b_color                 :string
 #
 
 require 'rails_helper'
