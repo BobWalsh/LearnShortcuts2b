@@ -16,8 +16,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -38,6 +37,12 @@ gem 'mandrill_mailer', '~> 1.4'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'stripe', '~> 3.30'
 gem 'stripe_event', '~> 2.1', '>= 2.1.1'
+# charts
+gem 'chartkick', '~> 3.0', '>= 3.0.1'
+gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
+gem 'groupdate', '~> 4.0.1'
+gem 'business_time', '~> 0.9.3'
+gem 'to_words', '~> 1.1', '>= 1.1.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

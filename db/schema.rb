@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_002843) do
+ActiveRecord::Schema.define(version: 2019_06_21_003958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,48 @@ ActiveRecord::Schema.define(version: 2019_06_09_002843) do
     t.string "topic"
   end
 
+  create_table "dspoints", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "point_type"
+    t.integer "point_value"
+    t.string "source_type"
+    t.integer "source_id"
+    t.datetime "award_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scorecards", force: :cascade do |t|
+    t.integer "current_score", default: 0
+    t.integer "user_id"
+    t.string "guest_id"
+    t.integer "card_id"
+    t.datetime "current_score_date"
+    t.integer "old_score_1"
+    t.integer "old_score_2"
+    t.integer "old_score_3"
+    t.integer "old_score_4"
+    t.integer "old_score_5"
+    t.datetime "old_score_1_date"
+    t.datetime "old_score_2_date"
+    t.datetime "old_score_3_date"
+    t.datetime "old_score_4_date"
+    t.datetime "old_score_5_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "name"
+    t.string "stripe_subscription_id"
+    t.string "interval"
+    t.integer "interval_count"
+    t.integer "amount"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,6 +125,27 @@ ActiveRecord::Schema.define(version: 2019_06_09_002843) do
     t.integer "weekly_email_day"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "weekly_reports", force: :cascade do |t|
+    t.integer "report_id"
+    t.integer "user_id"
+    t.datetime "week_ending"
+    t.integer "reviewed_card_count"
+    t.integer "green_cards"
+    t.text "direction"
+    t.integer "points_earned"
+    t.text "direction2"
+    t.text "didwell"
+    t.string "first_item_name"
+    t.text "first_item_text"
+    t.string "second_item_name"
+    t.text "second_item_text"
+    t.boolean "report_sent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_weekly_reports_on_report_id"
+    t.index ["user_id"], name: "index_weekly_reports_on_user_id"
   end
 
 end
