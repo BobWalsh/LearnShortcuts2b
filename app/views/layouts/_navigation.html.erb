@@ -39,7 +39,7 @@
       <!-- User is signed in -->
       <% if current_user.must_pay? %>
       <div id="trial_button" class='navbar-item'>
-        <%= link_to 'Days left in Trial:  ' + current_user.trial_days?.to_s, subscriptions_path(), class:"navbar-item trial-flag button #{@is_purple} " %>
+        <%= link_to 'Days left in Trial:  ' + current_user.trial_days?.to_s, "subscriptions_path(", class:"navbar-item trial-flag button #{@is_purple} " %>
       </div>
       <% end %>
       <div class='navbar-item'>
