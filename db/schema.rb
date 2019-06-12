@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_003958) do
     t.string "topic"
   end
 
-  create_table "dspoints", force: :cascade do |t|
+  create_table "ds_points", force: :cascade do |t|
     t.integer "user_id"
     t.integer "point_type"
     t.integer "point_value"
