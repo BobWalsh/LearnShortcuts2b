@@ -115,6 +115,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    high_voltage (3.1.2)
     highcharts-rails (6.0.3)
       railties (>= 3.1)
     i18n (1.6.0)
@@ -308,6 +309,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.7, >= 4.7.0.4)
   groupdate (~> 4.0.1)
   guard-rspec
+  high_voltage (~> 3.1)
   highcharts-rails (~> 6.0, >= 6.0.3)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)

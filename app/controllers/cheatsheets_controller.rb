@@ -5,7 +5,7 @@ class CheatsheetsController < ApplicationController
   # GET /cheatsheets.json
   def index
     @cheatsheets = Cheatsheet.all
-if !current_user
+    if !current_user
       # puts "is a guest"
       @guest_id = SecureRandom.uuid
       @user_id = "nil"
@@ -61,6 +61,7 @@ if !current_user
   # GET /cheatsheets/1.json
   def show
     @cards = Card.where(cheatsheet_id: @cheatsheet.id)
+    @cheatsheets = Cheatsheet.all
   end
 
   # GET /cheatsheets/new

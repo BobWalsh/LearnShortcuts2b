@@ -38,6 +38,7 @@ gem 'mandrill_mailer', '~> 1.4'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'stripe', '~> 3.30'
 gem 'stripe_event', '~> 2.1', '>= 2.1.1'
+gem 'high_voltage', '~> 3.1'
 # charts
 gem 'chartkick', '~> 3.0', '>= 3.0.1'
 gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'

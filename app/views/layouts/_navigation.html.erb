@@ -19,37 +19,81 @@
         <a class="navbar-item has-text-info is-size-7 is-active" href="/">
           Review Today's Cards
         </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+          </nav>
+          <a class="navbar-link has-background-success has-text-info" href="/">Cheatsheets
+          </a>
+          <div class="navbar-dropdown has-background-success is-boxed">
+            <% @cheatsheets.each do |cheatsheet| %>
+            <%= link_to cheatsheet.display_name ,cheatsheet_path(cheatsheet.id), class:"navbar-item has-background-success has-text-info"%>
+            <% end %>
+          </div>
+        </div>
         <%= link_to 'Sets', cheatsheets_path(), class:"navbar-item has-text-info" %>
         <a class="navbar-item has-text-info is-size-7" href="/">
           Metrics
         </a>
         <% else %>
         <%= link_to 'Why LearnShortcuts', root_path(), class:"navbar-item has-text-info is-active" %>
-        <%= link_to 'Why it Works', "/", class:"navbar-item has-text-info" %>
-        <%= link_to 'Pricing', "/", class:"navbar-item has-text-info" %>
+        <%= link_to 'Why it Works', "page_path('itworks')", class:"navbar-item has-text-info" %>
+        <%= link_to 'Pricing', "subscriptions_path()", class:"navbar-item has-text-info" %>
         <a class="navbar-item " href="/">
           Blog
         </a>
-        <%= link_to 'About', "/", class:"navbar-item has-text-info" %>
+        <%= link_to 'About', "static_pages_path()", class:"navbar-item has-text-info" %>
         <% end %>
+
       </div>
-    </div>
-    <div class="navbar-end">
-      <% if user_signed_in? %>
-      <!-- User is signed in -->
-      <% if current_user.must_pay? %>
-      <div id="trial_button" class='navbar-item'>
-        <%= link_to 'Days left in Trial:  ' + current_user.trial_days?.to_s, "subscriptions_path(", class:"navbar-item trial-flag button #{@is_purple} " %>
-      </div>
-      <% end %>
-      <div class='navbar-item'>
-        <button id="points-item" class="<%= @class_results %>" tooltip data-tooltip="<%= @points_tooltip_text %>">Points
-          this week:
-          <span id="nav-total-points" class="has-text-weight-bold ml-5">
-            <%= @points_this_week%>
-          </span>
-        </button>
-      </div>
-      <% end %>
+      <div class="navbar-end">
+        <% if user_signed_in? %>
+        <!-- User is signed in -->
+        <% if current_user.must_pay? %>
+        <div id="trial_button" class='navbar-item'>
+          <%= link_to 'Days left in Trial:  ' + current_user.trial_days?.to_s, "subscriptions_path(", class:"navbar-item trial-flag button #{@is_purple} " %>
+        </div>
+        <% end %>
+        <div class='navbar-item'>
+          <button id="points-item" class="<%= @class_results %>" tooltip
+            data-tooltip="<%= @points_tooltip_text %>">Points
+            this week:
+            <span id="nav-total-points" class="has-text-weight-bold ml-5">
+              <%= @points_this_week%>
+            </span>
+          </button>
+        </div>
+        <% end %>
+        <% if user_signed_in? %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+          </nav>
+          <a class="navbar-link" href="/">
+            <%= current_user.name  %>
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <%= link_to 'Your Profile', user_path(current_user.id), class:"navbar-item" %>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class =>"navbar-item" %>
+          </div>
+        </div>
+        <div class="navbar-dropdown is-right">
+          <a class="navbar-item">
+            <div>
+              <span class="icon is-small">
+                <i class="fa fa-user-circle-o"></i>
+              </span>
+              Profile
+            </div>
+          </a>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class =>"navbar-item" %>
+        </div>
+        <% else %>
+        <!-- Signup button for non-members -->
+        <div class="navbar-item">
+          <%= link_to "Log in", new_session_path(User), class:"button button-signup btn-outlined is-bold btn-align light-btn rounded raised" %>
+          <%= link_to('Sign up', new_user_registration_path, :class =>"button button-signup btn-outlined is-bold btn-align light-btn rounded raised")  %>
+        </div>
+        <% end %>
   </nav>
 </div>
