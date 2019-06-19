@@ -30,23 +30,23 @@
     <div class='columns'>
       <div class=' column is-12 has-text-white'>
         <div class="flexcheat">
-          <div class='image-area'>
+          <div class='image-area pt-20'>
             <figure class="image is-128x128">
               <img class="" src="<%=asset_path("sets/#{@cheatsheet.image}")%>" alt="Placeholder image">
             </figure>
           </div>
           <div class=''>
-            <div class="has-text-white-bis is-size-3">
+            <div class="has-text-white-bis is-size-3  pt-20">
               <%= @cheatsheet.display_name %>
             </div>
-            <div class="has-text-white-bis is-size-3">
+            <div class="has-text-white-bis is-size-3 ">
               <p class="is-size-4">
                 <%= @cheatsheet.description %>
               </p>
             </div>
           </div>
           <div class=''>
-            <p class="is-size-4"> OS:
+            <p class="is-size-4  pt-20"> OS:
               <strong><%= @cheatsheet.os %></strong></p>
             <p class="is-size-4"> Level:
               <strong><%= @cheatsheet.level %></strong></p>
