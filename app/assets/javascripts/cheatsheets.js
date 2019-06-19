@@ -8,7 +8,7 @@ $(document).ready(function () {
     .data("page");
 
   $(".card").flip({ axis: 'y' });
-
+  console.log("doc read cheatsheets");
   if (this_page == "cheatsheets") {
     // convert keycaps to actual keys
     $(".interface-1").each(function (i, val) {
