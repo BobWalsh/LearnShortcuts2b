@@ -20,6 +20,10 @@
         });
         $(".interface-1").eq(i).text("");
         $(".interface-1").eq(i).append(temp_var2);
+
+        // IDE
+        hljs.initHighlightingOnLoad();
+        hljs.initHighlighting();
       });
     };
   });
@@ -55,85 +59,80 @@
         </div>
       </div>
     </div>
-    <div class='column is-12'>
-      <div class="flexcheat">
-        <% @cards.each do |card| %>
+    <div class='column is-12 flexcheat'>
+      <h6 class='is-5 small has-text-white-bis'>(Click a card to see the answer.)</h6>
+    </div>
+    <div class='column is-12 flexcheat'>
 
-        <div class="card">
-          <div class="front">
-            <header class="card-header has-background-dark has-text-white-bis">
-              <p class="card-header-title has-text-white-bis">
-                <%= card.question %>
-              </p>
+      <% @cards.each do |card| %>
 
-            </header>
-            <div class="card-content">
+      <div class="card">
+        <div class="front">
+          <header class="card-header has-background-dark has-text-white-bis">
+            <p class="card-header-title has-text-white-bis">
+              <%= card.question %>
+            </p>
 
-              <div class="content front-content">
-                <% if card.interface == 1 %>
-                <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
-                  <div class="testscale">
-                    <div class='interface-1'>
-                      <%= card.keycaps %>
-                    </div>
+          </header>
+          <div class="card-content">
+
+            <div class="content front-content">
+              <% if card.interface == 1 %>
+              <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
+                <div class="testscale">
+                  <div class='interface-1'>
+                    <%= card.keycaps %>
                   </div>
                 </div>
-                <% elsif card.interface == 2 %>
-                <!-- terminal -->
-                <% elsif card.interface == 3 %>
-                <!-- IDE -->
-                <pre><code class="css">
-                 <%= card.answer %>
+              </div>
+              <% elsif card.interface == 2 %>
+              <!-- terminal -->
+              <% elsif card.interface == 3 %>
+              <!-- IDE value must be flush left...-->
+              <pre><code class="css">
+<%= card.answer %>
                 </code></pre>
-                <% end  %>
-              </div>
+              <% end  %>
             </div>
-            <footer class="">
-              <i class="fa fa-info-circle is-pulled-right  pt-10 pr-40 mr-20 pb-0 con-tooltip top" aria-hidden="true">
-                <div class="tooltip ">
-                  <p>Click to show more</p>
-                </div>
-              </i>
-
-            </footer>
-          </div>
-          <div class="back">
-            <header class="card-header has-background-dark has-text-white-bis">
-              <p class="card-header-title has-text-white-bis">
-                <%= card.question %>
-              </p>
-            </header>
-            <div class="card-content">
-              <div class="content back-content">
-                <% if card.description.length > 10 %>
-                <div class='is-size-6 has-text-grey-dark is-uppercase'>Notes:</div>
-                <div class='notes-area'>
-                  <%= card.description %>
-                </div>
-                <% end %>
-                <% if !card.mnemonic.nil? %>
-                <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Mnemonic:</div>
-                <div class='mnemonic-area'>
-                  <%= card.mnemonic %>
-                </div>
-                <% end %>
-                <div class='citation-area'>
-                  <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
-                </div>
-              </div>
-            </div>
-            </footer>
-            <footer class="card-footer">
-
-
-            </footer>
           </div>
         </div>
+        <div class="back">
+          <header class="card-header has-background-dark has-text-white-bis">
+            <p class="card-header-title has-text-white-bis">
+              <%= card.question %>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content back-content">
+              <% if card.description.length > 10 %>
+              <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Notes:</div>
+              <div class='notes-area'>
+                <%= card.description %>
+              </div>
+              <% end %>
+              <% if !card.mnemonic.nil? %>
+              <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Mnemonic:</div>
+              <div class='mnemonic-area'>
+                <%= card.mnemonic %>
+              </div>
+              <% end %>
+              <div class='citation-area'>
+                <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
+              </div>
+            </div>
+          </div>
+          </footer>
+          <footer class="card-footer">
 
-        <% end %>
+
+          </footer>
+        </div>
       </div>
 
+      <% end %>
     </div>
+
+
   </div>
   </div>
   </div>
