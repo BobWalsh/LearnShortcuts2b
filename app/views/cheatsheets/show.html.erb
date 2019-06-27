@@ -87,6 +87,9 @@
               </div>
               <% elsif card.interface == 2 %>
               <!-- terminal -->
+              <pre><code class="shell">
+<%= card.answer %>
+              </code></pre>
               <% elsif card.interface == 3 %>
               <!-- IDE value must be flush left...-->
               <pre><code class="css">
@@ -116,7 +119,7 @@
                 <%= card.mnemonic %>
               </div>
               <% end %>
-              <div class='citation-area'>
+              <div class='citation-area pt-20'>
                 <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
               </div>
             </div>
