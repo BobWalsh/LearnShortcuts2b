@@ -16,5 +16,6 @@
 // = require turbolinks
 // = require keyboardtrans
 // = require cheatsheets
+// = require cards
 // = require highlight.pack
 // = require_tree .
