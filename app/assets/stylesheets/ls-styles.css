@@ -5657,6 +5657,8 @@ a.tag:hover {
   color: rgba(10, 10, 10, 0.5);
   max-width: 100%;
   position: relative;
+  min-width: 300px;
+  min-height: 400px;
 }
 
 .card-header {
