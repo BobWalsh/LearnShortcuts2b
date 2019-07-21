@@ -29,6 +29,14 @@
     };
   });
 </script>
+<script>
+  $(document).ready(function () {
+    var stack = $('.stack').paperstack({});
+    console.log("stacking cards.");
+    $('#next').click(stack.next);
+    $('#prev').click(stack.previous);
+  });
+</script>
 
 <div class="hero-body container">
   <div class="columns">
@@ -43,10 +51,16 @@
     </div>
     <div class='vmargin-dss hero-body container' data-page="<%= controller.controller_name %>">
       <div class="column  is-4-desktop  ">
-        <div id="" class="">
-          <div class="">
+        <div class="is-size-5 mt-60">
+          <a id="prev"><button class='button has-text-weight-bold is-success ml-20'>
+            <i class="fa fa-angle-left"></i></button> </a>
+          <a id="next"><button class='button has-text-weight-bold is-success ml-20'>
+            <i class="fa fa-angle-right"></i></button> </a>
+        </div>
+        <div id="" class="stack-holder">
+          <div class="stack">
             <% @cards.limit(6).each do |card| %>
-              <div class="card">
+              <div class=" sheet">
                 <div class="front">
                   <header class="card-header has-background-dark has-text-white-bis">
                     <p class="card-header-title has-text-white-bis">
@@ -77,12 +91,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="back">
-                  <header class="card-header has-background-dark has-text-white-bis">
-                    <p class="card-header-title has-text-white-bis">
-                      <%= card.question %>
-                    </p>
-                  </header>
+                <div class="back">  
                   <div class="card-content">
                     <div class="content back-content">
                       <% if card.description.length > 10 %>
@@ -103,10 +112,37 @@
                     </div>
                   </div>
                 </div>
+                
+                <div class="field has-addons mt-20 mb-20">
+                  <p class="control">
+                    <a class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-cross"></i>
+                      </span>
+                      <span>Left</span>
+                    </a>
+                  </p>
+                  <p class="control">
+                    <a class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <span>Center</span>
+                    </a>
+                  </p>
+                  <p class="control">
+                    <a class="button">
+                      <span class="icon is-small">
+                        <i class="fa fa-meh-face"></i>
+                      </span>
+                      <span>Right</span>
+                    </a>
+                  </p>
+                </div>
               </div>
             <% end %>
           </div>
-
+          
         </div>
       
       </div>
