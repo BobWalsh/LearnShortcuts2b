@@ -40,112 +40,123 @@
 
 <div class="hero-body container">
   <div class="columns">
-    <div class="column left is-7-desktop">
+    <div class="column left is-12-desktop">
       <h1 class="title is-size-2-mobile is-1 has-text-white">Home</h1>
       <p>
-        <span class="subtitle is-2 has-text-white">Review:</span>
-        <button class='button has-text-weight-bold is-success ml-20'>Today's Cards</button>
-        <button class='button has-text-weight-bold is-info ml-20'>A Cheat Sheet</button>
-        <button class='button has-text-weight-bold is-warning ml-20 mb-100'>A Specific Topic</button>
+        <span class="subtitle is-2 has-text-white is-pulled-left">Review:</span>
+        <button class='button has-text-weight-bold is-success ml-100 is-pulled-left'>Today's Cards</button>
+        <button class='button has-text-weight-bold is-info ml-20 is-pulled-left'>A Cheat Sheet</button>
+        <button class='button has-text-weight-bold is-warning ml-20 mb-100 is-pulled-left'>A Specific Topic</button>
+        <button class='button has-text-weight-bold is-danger ml-20 is-pulled-right'>10</button>
+        <button class='button has-text-weight-bold is-warning ml-20 is-pulled-right'>15</button>
+        <button class='button has-text-weight-bold is-success ml-20 mb-100 is-pulled-right'>20</button>
+        <span class="subtitle is-2 has-text-white pl-30 is-pulled-right">All:</span>
       </p>
     </div>
+  </div>
+
+
+  <div class='column offset-3 is-three-fifths is-offset-one-quarter '>
     <div class='vmargin-dss hero-body container' data-page="<%= controller.controller_name %>">
-      <div class="column  is-4-desktop  ">
-        <div class="is-size-5 mt-60">
-          <a id="prev"><button class='button has-text-weight-bold is-success ml-20'>
-            <i class="fa fa-angle-left"></i></button> </a>
-          <a id="next"><button class='button has-text-weight-bold is-success ml-20'>
-            <i class="fa fa-angle-right"></i></button> </a>
-        </div>
+      <div class="column is-12-desktop">
+
+        <a id="prev" class='button has-text-weight-bold is-success is-pulled-left has-text-weight-bold'>
+          <i class="fa fa-arrow-left"></i></button> </a>
+        <a id="next" class='button has-text-weight-bold is-success is-pulled-right has-text-weight-bold'>
+          <i class="fa fa-arrow-right"></i></button> </a>
+
         <div id="" class="stack-holder">
           <div class="stack">
             <% @cards.limit(6).each do |card| %>
-              <div class=" sheet">
-                <div class="front">
-                  <header class="card-header has-background-dark has-text-white-bis">
-                    <p class="card-header-title has-text-white-bis">
-                      <%= card.question %>
-                    </p>
-                  </header>
-                  <div class="card-content">
-                    <div class="content front-content">
-                      <% if card.interface == 1 %>
-                      <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
-                        <div class="testscale">
-                          <div class='interface-1'>
-                            <%= card.keycaps %>
-                          </div>
+            <div class=" sheet">
+              <div class="front">
+                <header class="card-header has-background-dark has-text-white-bis">
+                  <p class="card-header-title has-text-white-bis">
+                    <%= card.question %>
+                  </p>
+                </header>
+                <div class="card-content">
+                  <div class="content front-content">
+                    <% if card.interface == 1 %>
+                    <div class="interface is-size-5 pl-20 pt-20 pb-20 testarea keyboard">
+                      <div class="testscale">
+                        <div class='interface-1'>
+                          <%= card.keycaps %>
                         </div>
                       </div>
-                      <% elsif card.interface == 2 %>
-                      <!-- terminal -->
-                      <pre><code class="shell">
-                <%= card.answer %>
-                              </code></pre>
-                      <% elsif card.interface == 3 %>
-                      <!-- IDE value must be flush left...-->
-                      <pre><code class="css">
-                <%= card.answer %>
-                                </code></pre>
-                      <% end  %>
                     </div>
+                    <% elsif card.interface == 2 %>
+                    <!-- terminal -->
+                    <pre><code class="shell">
+                    <%= card.answer %>
+                                  </code></pre>
+                    <% elsif card.interface == 3 %>
+                    <!-- IDE value must be flush left...-->
+                    <pre><code class="css">
+                    <%= card.answer %>
+                                    </code></pre>
+                    <% end  %>
                   </div>
-                </div>
-                <div class="back">  
-                  <div class="card-content">
-                    <div class="content back-content">
-                      <% if card.description.length > 10 %>
-                      <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Notes:</div>
-                      <div class='notes-area'>
-                        <%= card.description %>
-                      </div>
-                      <% end %>
-                      <% if !card.mnemonic.nil? %>
-                      <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Mnemonic:</div>
-                      <div class='mnemonic-area'>
-                        <%= card.mnemonic %>
-                      </div>
-                      <% end %>
-                      <div class='citation-area pt-20'>
-                        <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="field has-addons mt-20 mb-20">
-                  <p class="control">
-                    <a class="button">
-                      <span class="icon is-small">
-                        <i class="fa fa-cross"></i>
-                      </span>
-                      <span>Left</span>
-                    </a>
-                  </p>
-                  <p class="control">
-                    <a class="button">
-                      <span class="icon is-small">
-                        <i class="fa fa-check"></i>
-                      </span>
-                      <span>Center</span>
-                    </a>
-                  </p>
-                  <p class="control">
-                    <a class="button">
-                      <span class="icon is-small">
-                        <i class="fa fa-meh-face"></i>
-                      </span>
-                      <span>Right</span>
-                    </a>
-                  </p>
                 </div>
               </div>
+              <div class="back">
+                <div class="card-content">
+                  <div class="content back-content">
+                    <% if card.description.length > 10 %>
+                    <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Notes:</div>
+                    <div class='notes-area'>
+                      <%= card.description %>
+                    </div>
+                    <% end %>
+                    <% if !card.mnemonic.nil? %>
+                    <div class='is-size-6 has-text-grey-dark is-uppercase pt-20'>Mnemonic:</div>
+                    <div class='mnemonic-area'>
+                      <%= card.mnemonic %>
+                    </div>
+                    <% end %>
+                    <div class='citation-area pt-20'>
+                      <%= link_to card.citation_title, card.citation_url, target: "_blank", class: "is-size-7 hast_text-success is-capitalized is-italic" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field has-addons mt-20 mb-20">
+
+                <p class="control">
+                  <a class="button is-danger mr-10">
+                    <span class="icon is-large pl-10 pr-5">
+                      <i class="fa fa-2x fa-frown-o ml-10 mr-10"></i>
+                    </span>
+                    <span>Don't know</span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-warning mr-10">
+                    <span class="icon is-large  pl-10 pr-5">
+                      <i class=" fa fa-2x fa-meh-o ml-10 mr-10"></i>
+                    </span>
+                    <span>Somewhat</span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-success mr-10">
+                    <span class="icon is-large pl-10 pr-5">
+                      <i class="fa fa-2x fa-smile-o ml-10 mr-10"></i>
+                    </span>
+                    <span>Know it!</span>
+                  </a>
+                </p>
+              </div>
+            </div>
             <% end %>
           </div>
-          
+
         </div>
-      
+
       </div>
     </div>
   </div>
+
+
 </div>
