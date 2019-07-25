@@ -43,7 +43,6 @@
         </a>
         <%= link_to 'About', "static_pages_path()", class:"navbar-item has-text-info" %>
         <% end %>
-
       </div>
       <div class="navbar-end">
         <% if user_signed_in? %>
@@ -94,5 +93,7 @@
           <%= link_to('Sign up', new_user_registration_path, :class =>"button button-signup btn-outlined is-bold btn-align light-btn rounded raised")  %>
         </div>
         <% end %>
+      </div>
+    </div>
   </nav>
 </div>
