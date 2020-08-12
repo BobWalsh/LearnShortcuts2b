@@ -66,7 +66,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    chartkick (3.2.0)
+    chartkick (3.4.0)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -301,7 +301,7 @@ DEPENDENCIES
   business_time (~> 0.9.3)
   byebug
   capybara
-  chartkick (~> 3.0, >= 3.0.1)
+  chartkick (~> 3.4)
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   factory_bot
